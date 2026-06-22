@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯资料页 · 阅读与参考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f7fa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            border: 1px solid #e6ecf0;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+            padding: 2.2rem 2rem;
+            margin-bottom: 1.8rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            background: #ffffff;
+            border-radius: 18px;
+            border: 1px solid #e6ecf0;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+            margin-bottom: 1.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1e2a3a;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #586774;
+            max-width: 600px;
+            margin: 0.5rem auto 0;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #1f2a3a;
+            border-left: 4px solid #3b6e9b;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.4rem;
+            margin: 1.2rem 0 0.4rem;
+        }
+
+        .highlight-item {
+            background: #f9fbfc;
+            border-radius: 14px;
+            padding: 1.2rem 1rem;
+            border: 1px solid #eef3f7;
+        }
+
+        .highlight-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #1e2a3a;
+            margin-bottom: 0.35rem;
+        }
+
+        .highlight-item p {
+            font-size: 0.95rem;
+            color: #4a5b6a;
+        }
+
+        .inline-link {
+            color: #216b9c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b7cddf;
+            font-weight: 500;
+            transition: color 0.15s, text-decoration-color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #124266;
+            text-decoration-color: #124266;
+        }
+
+        .scenario-list {
+            list-style: none;
+            margin-top: 0.6rem;
+        }
+
+        .scenario-list li {
+            padding: 0.5rem 0 0.5rem 1.8rem;
+            position: relative;
+            border-bottom: 1px dashed #e9eef3;
+            color: #2d3f4f;
+        }
+
+        .scenario-list li:last-child {
+            border-bottom: none;
+        }
+
+        .scenario-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0.4rem;
+            color: #3b6e9b;
+            font-weight: 600;
+        }
+
+        .tip-box {
+            background: #f1f6fb;
+            border-radius: 14px;
+            padding: 1.2rem 1.5rem;
+            border-left: 4px solid #577a9e;
+            margin: 1.2rem 0 0.6rem;
+        }
+
+        .tip-box p {
+            margin-bottom: 0.4rem;
+        }
+
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 0.8rem;
+        }
+
+        .faq-item {
+            background: #fafcfd;
+            border-radius: 12px;
+            padding: 1rem 1.2rem;
+            border: 1px solid #e6edf4;
+        }
+
+        .faq-item strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: #1b3349;
+        }
+
+        .faq-item p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #3d5466;
+        }
+
+        .footer-note {
+            font-size: 0.85rem;
+            color: #7a8b9b;
+            text-align: center;
+            margin-top: 2rem;
+            border-top: 1px solid #e3e9ef;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .card {
+                padding: 1.6rem 1.2rem;
+            }
+            .hero {
+                padding: 2rem 1rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>世界杯 · 查询与对照</h1>
+        <p>赛事数据、历史脉络、延伸阅读——一个轻量参考页，帮助你快速定位信息。</p>
+    </div>
+
+    <!-- 摘要 -->
+    <div class="card">
+        <div class="section-title">日常查询的起点</div>
+        <p>
+            无论是查找往届冠军、小组赛积分，还是对比不同年代的比赛数据，一个条理清晰的资料页能大幅节省时间。
+            <a href="https://vcn-fifa-worldcup.com" class="inline-link">世界杯</a>专题站以结构化的方式整理赛事档案、球队信息和经典对决，
+            你可以把它当作查询日历、阅读背景资料或梳理观赛脉络的辅助工具。
+            不需要在多个页面之间反复跳转，基础信息在这里就能获得第一轮对照。
+        </p>
+    </div>
+
+    <!-- 亮点 -->
+    <div class="card">
+        <div class="section-title">几个值得一提的亮点</div>
+        <div class="highlight-grid">
+            <div class="highlight-item">
+                <h3>多届赛事并览</h3>
+                <p>从早期杯赛到最新周期，数据按年份与赛区排列，便于横向比较。</p>
+            </div>
+            <div class="highlight-item">
+                <h3>球队与球员档案</h3>
+                <p>核心出场记录、进球分布，以及历届阵容概览，适合赛前预习。</p>
+            </div>
+            <div class="highlight-item">
+                <h3>延伸阅读入口</h3>
+                <p>每届赛事附带背景短文、经典比赛回顾，适合深度爱好者。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 使用建议 -->
+    <div class="card">
+        <div class="section-title">怎样使用更顺手</div>
+        <ul class="scenario-list">
+            <li><strong>赛前准备：</strong>打开<a href="https://vcn-fifa-worldcup.com" class="inline-link">世界杯</a>页面，浏览本届小组分组与过往交锋记录，建立基本赛前认知。</li>
+            <li><strong>观赛间隙：</strong>快速查阅某一球队的历届成绩，对比不同时期的战术风格变化。</li>
+            <li><strong>延伸阅读：</strong>跟随页面中的历史文章链接，补充经典赛事的社会文化背景——适合写球评或和朋友讨论时作为素材。</li>
+            <li><strong>数据交叉验证：</strong>将页面中的统计数字与官方数据互为参考，提升理解的准确度。</li>
+        </ul>
+        <div class="tip-box">
+            <p>💡 建议将页面添加到书签，赛季期间可随时回查。所有数据均基于公开资料整理，不涉及实时竞猜或投注引导。</p>
+        </div>
+    </div>
+
+    <!-- 可信但克制的说明 + FAQ摘要 -->
+    <div class="card">
+        <div class="section-title">关于数据与使用边界</div>
+        <p>
+            本站内容以历史公开信息与赛事档案为基础，力求准确，但并非国际足联官方渠道。
+            如果你需要官方赛程、裁判名单或实时比分，请以 FIFA 官网或授权媒体为准。
+            <a href="https://vcn-fifa-worldcup.com" class="inline-link">世界杯</a>专题站适合作为辅助阅读材料，
+            不替代任何官方直播、票务或新闻服务。以下是一些常见疑问的简要回答：
+        </p>
+        <div class="faq-mini">
+            <div class="faq-item">
+                <strong>数据更新频率？</strong>
+                <p>主要赛事数据在每届大赛结束后更新，日常保持对重大转会、教练变动的修订。无实时刷新机制。</p>
+            </div>
+            <div class="faq-item">
+                <strong>能否转载或引用？</strong>
+                <p>页面内原创性整理内容欢迎个人学习引用，商用或大范围转载请注明出处。涉及第三方数据请尊重原版权。</p>
+            </div>
+            <div class="faq-item">
+                <strong>是否包含博彩或预测？</strong>
+                <p>本页不包含任何竞猜、赔率、投注引导或比赛结果预测。纯信息展示，无诱导成分。</p>
+            </div>
+        </div>
+        <p style="margin-top: 1rem; color: #4a5b6a;">
+            若你希望进一步深挖某届赛事或某支球队，不妨从上述链接出发，搭配图书、纪录片共同使用。
+        </p>
+    </div>
+
+    <!-- 一个低调的收束 -->
+    <div class="footer-note">
+        <span>用于日常查阅与延伸阅读 · 保持克制与准确</span>
+    </div>
+
+</div>
+</body>
+</html>
